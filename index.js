@@ -1,3 +1,28 @@
+//  _____                      _       _   _             
+// |  __ \                    (_)     | | (_)            
+// | |  | | ___  ___  ___ _ __ _ _ __ | |_ _  ___  _ __  
+// | |  | |/ _ \/ __|/ __| '__| | '_ \| __| |/ _ \| '_ \ 
+// | |__| |  __/\__ \ (__| |  | | |_) | |_| | (_) | | | |
+// |_____/ \___||___/\___|_|  |_| .__/ \__|_|\___/|_| |_|
+//                              | |                      
+//                              |_|                      
+//
+// QL is a choice for anyone who just wants to quickly 
+// learn a language and do some simple maths in an even simpler format.
+
+
+
+
+//   _____          _      
+//  / ____|        | |     
+//  | |    ___   __| | ___ 
+//  | |   / _ \ / _` |/ _ \
+//  | |__| (_) | (_| |  __/
+//  \_____\___/ \__,_|\___|
+
+
+
+
 // Default Variables:
 let pos = 0
 let memory = []
@@ -42,6 +67,8 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             continue;
         }
 
+        ///////////////////////////////////////////////
+
         // < // Move backward
         /***/if (ch == "<") {
             pos -= 1;
@@ -50,6 +77,9 @@ fs.readFile("index.txt", "utf8", (err, data) => {
         else if (ch == ">") {
             pos += 1;
         }
+
+        ///////////////////////////////////////////////
+
         // ] // Increase value of current position by 1
         else if (ch == "]") {
             memory[pos] += 1;
@@ -58,6 +88,9 @@ fs.readFile("index.txt", "utf8", (err, data) => {
         else if (ch == "[") {
             memory[pos] -= 1;
         }
+
+        ///////////////////////////////////////////////
+
         // $ // Read value of current position
         else if (ch == "$") {
             console.log(memory[pos]);
@@ -74,6 +107,9 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             }
             console.log(output.join(", "))
         }
+
+        ///////////////////////////////////////////////
+
         // + //  Set value of current slot to sum of values of two slots before current slot
         else if (ch == "+") {
             memory[pos] = memory[pos - 1] + memory[pos - 2];
@@ -90,6 +126,9 @@ fs.readFile("index.txt", "utf8", (err, data) => {
         else if (ch == "/") {
             memory[pos] = memory[pos - 1] / memory[pos - 2];
         }
+
+        ///////////////////////////////////////////////
+
         // ? // Run all code before an assigned semi-colon (;) if value of current slot matches the value of the slot before
         else if (ch == "?") {
             if (memory[pos] != memory[pos - 1]) {
@@ -97,6 +136,25 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             }
         }
 
+        ///////////////////////////////////////////////
+
     }
 
 });
+
+
+
+
+
+
+//===============================//
+//                               //
+//     __          ________      //
+//    / /   ______/  _/ __ \     //
+//   / /   / __  // // / / /     //
+//  / /___/ /_/ // // /_/ /      //
+// /_____/\_____\___/\___\_\     //
+//                               //
+//                               //
+// (https://github.com/kubgus)   //
+//===============================//
