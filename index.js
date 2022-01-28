@@ -19,6 +19,8 @@
 //  | |   / _ \ / _` |/ _ \
 //  | |__| (_) | (_| |  __/
 //  \_____\___/ \__,_|\___|
+//
+// Also contains some level of Documentation
 
 
 
@@ -37,6 +39,10 @@ fs.readFile("index.txt", "utf8", (err, data) => {
 
     // Set default value to skip character
     let skip = false;
+
+    // Define data for loops
+    let loop = 0;
+    let loopChar = 0;
 
     // Runs forever
     let runtime = true;
@@ -58,9 +64,22 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             memory[pos] = 0;
         }
 
-        // Disable skipping
+        // ; // Ends longer commands
         if (ch == ";") {
-            skip = false;
+
+            // Disable skipping
+            if (skip == true) {
+                skip = false;
+            }
+
+            // Repeat loop
+            if (loop > 1) {
+                char = loopChar;
+                loop--;
+
+                ch = data.charAt(char);
+            }
+
         }
         // Skip character
         if (skip) {
@@ -134,6 +153,22 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             if (memory[pos] != memory[pos - 1]) {
                 skip = true;
             }
+        }
+        // & // Run all code before an assigned semi-colon (;) value of current slot times
+        else if (ch == "&") {
+            if (loop > 0) {
+                throw "There currently cannot be more loops running at the same time. (I am working on fixing it)";
+            }
+
+            loop = memory[pos];
+            loopChar = char + 1;
+        }
+
+        ///////////////////////////////////////////////
+
+        // : // Set value of current position to value of position at value of current position
+        else if (ch == ":") {
+            memory[pos] = memory[memory[pos]];
         }
 
         ///////////////////////////////////////////////

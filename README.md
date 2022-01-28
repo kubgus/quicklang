@@ -10,6 +10,11 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 ##### It looks something like this:
 ```
 ]]]>]]]$>*>]]]]]]]]]?[[[[#>>;@
+
+]]]]]&
+>:$
+;
+@
 ```
 > Scary, huh? Well, not really.
 
@@ -30,7 +35,7 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 ## Documentation:
 
 **// < //**   Move backward<br />
-**// > //**   Move forward<br />
+**// > //**   Move forward<br />1
 <br />
 **// ] //**   Increase value of current position by 1<br />
 **// [ //**   Decrease value of current position by 1<br />
@@ -46,3 +51,6 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 <br />
 **// ; //**   Ends longer commands *(Exaple: If statement)*<br />
 **// ? //**   Run all code before an assigned semi-colon (;) if value of current slot matches the value of the slot before<br />
+**// & //**   Run all code before an assigned semi-colon (;) value of current slot times<br />
+<br />
+**// : //**   Set value of current position to value of position at value of current position *(Basically a move function)*<br />
