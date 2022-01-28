@@ -124,7 +124,7 @@ fs.readFile("index.txt", "utf8", (err, data) => {
             for (var i = 0; i <= memory.length; i++) {
                 output.push(memory[i]);
             }
-            console.log(output.join(", "))
+            console.log("| " + output.join(" | "));
         }
 
         ///////////////////////////////////////////////
