@@ -39,6 +39,10 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 <br />
 **// ] //**   Increase value of current position by 1<br />
 **// [ //**   Decrease value of current position by 1<br />
+**// ) //**   Increase value of current position by 10<br />
+**// ( //**   Decrease value of current position by 10<br />
+**// } //**   Increase value of current position by 100<br />
+**// { //**   Decrease value of current position by 100<br />
 <br />
 **// $ //**   Read value of current position<br />
 **// # //**   Read current position<br />

@@ -1,0 +1,32 @@
+two numbers
+must be only one slot
+})>
+}>
+
+operation
+one add
+two subtract
+three multiply
+four divide
+]>
+
+
+add
+]]:>
+]?:>:>+$
+;
+
+subtract
+]]:>
+]]?[:>:>-$
+;
+
+multiply
+]]:>
+]]]?[[:>:>*$
+;
+
+divide
+]]:>
+]]]]?[[[:>:>/$
+;

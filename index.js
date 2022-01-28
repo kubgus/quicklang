@@ -1,3 +1,6 @@
+// "example", "calculator"
+const script = "example";
+
 //  _____                      _       _   _             
 // |  __ \                    (_)     | | (_)            
 // | |  | | ___  ___  ___ _ __ _ _ __ | |_ _  ___  _ __  
@@ -32,7 +35,7 @@ let memory = []
 
 // Read file (index.txt) and run
 const fs = require('fs')
-fs.readFile("index.txt", "utf8", (err, data) => {
+fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
 
     // Start at first character of code
     let char = -1;
@@ -106,6 +109,22 @@ fs.readFile("index.txt", "utf8", (err, data) => {
         // [ //  Decrease value of current position by 1
         else if (ch == "[") {
             memory[pos] -= 1;
+        }
+        // ) // Increase value of current position by 10
+        else if (ch == ")") {
+            memory[pos] += 10;
+        }
+        // ( //  Decrease value of current position by 10
+        else if (ch == "(") {
+            memory[pos] -= 10;
+        }
+        // } // Increase value of current position by 100
+        else if (ch == "}") {
+            memory[pos] += 100;
+        }
+        // { //  Decrease value of current position by 100
+        else if (ch == "{") {
+            memory[pos] -= 100;
         }
 
         ///////////////////////////////////////////////
