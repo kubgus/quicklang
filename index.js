@@ -1,5 +1,6 @@
 // "example", "calculator"
 const script = "example";
+const WARN = true;
 
 //  _____                      _       _   _             
 // |  __ \                    (_)     | | (_)            
@@ -54,6 +55,12 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         // Move to next character in code
         char++;
 
+        // Stop if all code was ran
+        if (char > data.length) {
+            runtime = false
+            continue
+        }
+
         // Get value of character in code
         let ch = data.charAt(char);
 
@@ -67,7 +74,7 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
             memory[pos] = 0;
         }
 
-        // ; // Ends longer commands
+        // ; // End all loops and statements
         if (ch == ";") {
 
             // Disable skipping
@@ -175,8 +182,10 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         }
         // & // Run all code before an assigned semi-colon (;) value of current slot times
         else if (ch == "&") {
-            if (loop > 0) {
-                throw "There currently cannot be more loops running at the same time. (I am working on fixing it)";
+            if (loop > 0 && WARN) {
+                console.log("\x1b[0m", "");
+                console.log("\x1b[33m", "If you include a semi-colon (;), it will end ALL loops and statements, so multiple of them might not work. (I am working on fixing it)");
+                console.log("\x1b[0m", "");
             }
 
             loop = memory[pos];
