@@ -44,7 +44,6 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 **// } //**   Increase value of current position by 100<br />
 **// { //**   Decrease value of current position by 100<br />
 <br />
-**// % //**   Read value of current position as ASCII<br />
 **// $ //**   Read value of current position<br />
 **// # //**   Read current position<br />
 **// @ //**   Read whole memory<br />
@@ -81,16 +80,6 @@ print the value of the 1st slot
 ]:$>
 ```
 *When the value of the slot is 0, you can use a colon (:) to get the value of the 0th slot.*
-<br />
-<br />
-
-### Hello World
-You can also write characters with the help of ASCII codes (%).
-```
-}]]]]%[[[%)[[[%%]]]%> hello
-\)))]]%> space
-}))[%(]]%]]]%(]]]]%(]]%> world
-```
 <br />
 <br />
 

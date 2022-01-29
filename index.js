@@ -136,10 +136,6 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
 
         ///////////////////////////////////////////////
 
-        // % // Read value of current position as ASCII
-        else if (ch == "%") {
-            console.log(String.fromCharCode(memory[pos]));
-        }
         // $ // Read value of current position
         else if (ch == "$") {
             console.log(memory[pos]);
