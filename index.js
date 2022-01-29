@@ -136,6 +136,10 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
 
         ///////////////////////////////////////////////
 
+        // % // Read value of current position as ASCII
+        else if (ch == "%") {
+            console.log(String.fromCharCode(memory[pos]));
+        }
         // $ // Read value of current position
         else if (ch == "$") {
             console.log(memory[pos]);
@@ -182,7 +186,7 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         }
         // & // Run all code before an assigned semi-colon (;) value of current slot times
         else if (ch == "&") {
-            if (loop > 0 && WARN) {
+            if (loop > 1 && WARN) {
                 console.log("\x1b[0m", "");
                 console.log("\x1b[33m", "If you include a semi-colon (;), it will end ALL loops and statements, so multiple of them might not work. (I am working on fixing it)");
                 console.log("\x1b[0m", "");
