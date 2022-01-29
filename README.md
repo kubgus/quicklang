@@ -33,7 +33,6 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 <br />
 
 ## Documentation:
-<br />
 
 **// < //**   Move backward<br />
 **// > //**   Move forward<br />
@@ -64,7 +63,6 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 <br />
 
 ## Code Snippets:
-<br />
 
 ### Set and Read a variable
 ##### Variables can be assigned and accessed just by setting a value in memory.
