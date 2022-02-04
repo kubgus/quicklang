@@ -15,5 +15,5 @@ get value of loop value
 ]]]]]:
 print value at value of loop value
 :$
-go back to original slot and repeat/end loop
+go back to original slot and repeat or end loop
 <;
