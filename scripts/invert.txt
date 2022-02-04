@@ -1,0 +1,19 @@
+array
+]]]> 3
+]]> 2
+)> 10
+)[[[[> 6
+)]]> 12
+
+loop 5 times
+]]]]]&
+decrease loop value by 1
+[
+reset value to 0
+>&[;
+get value of loop value
+]]]]]:
+print value at value of loop value
+:$
+go back to original slot and repeat/end loop
+<;

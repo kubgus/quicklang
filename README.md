@@ -32,6 +32,13 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 <br />
 <br />
 
+<!-- ## How does it work?
+
+...
+
+<br />
+<br /> -->
+
 ## Documentation:
 
 **// < //**   Move backward<br />
@@ -53,11 +60,13 @@ QL is a choice for anyone who just wants to quickly learn a language and do some
 **// \* //**   Set value of current slot to product of values of two slots before current slot<br />
 **// / //**   Set value of current slot to quotient of values of two slots before current slot<br />
 <br />
-**// ; //**   End all loops and statements *(Exaple: If statement)*<br />
+**// ; //**   End loop and/or statement **[MIGHT CAUSE ISSUES]**<br />
 **// ? //**   Run all code before an assigned semi-colon (;) if value of current slot matches the value of the slot before<br />
 **// & //**   Run all code before an assigned semi-colon (;) value of current slot times<br />
 <br />
 **// : //**   Set value of current position to value of position at value of current position *(Basically a move function)*<br />
+<br />
+***// Any other characters will be ignored as a comment. //***
 
 <br />
 <br />

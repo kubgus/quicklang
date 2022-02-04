@@ -1,6 +1,5 @@
-// "example", "calculator"
-const script = "example";
-const WARN = true;
+// "example", "calculator", "invert"
+const script = "invert";
 
 //  _____                      _       _   _             
 // |  __ \                    (_)     | | (_)            
@@ -45,8 +44,7 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
     let skip = false;
 
     // Define data for loops
-    let loop = 0;
-    let loopChar = 0;
+    let loops = [];
 
     // Runs forever
     let runtime = true;
@@ -78,16 +76,19 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         if (ch == ";") {
 
             // Disable skipping
-            if (skip == true) {
-                skip = false;
-            }
+            skip = false;
 
             // Repeat loop
-            if (loop > 1) {
-                char = loopChar;
-                loop--;
+            if (loops.length > 0) {
+                let currentLoop = loops[loops.length - 1];
+                if (currentLoop[1] > 1) {
+                    char = currentLoop[0];
+                    currentLoop[1]--;
 
-                ch = data.charAt(char);
+                    ch = data.charAt(char);
+                } else {
+                    loops.pop();
+                }
             }
 
         }
@@ -175,6 +176,7 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         ///////////////////////////////////////////////
 
         // ? // Run all code before an assigned semi-colon (;) if value of current slot matches the value of the slot before
+        // TODO: Make more if statements possible
         else if (ch == "?") {
             if (memory[pos] != memory[pos - 1]) {
                 skip = true;
@@ -182,14 +184,11 @@ fs.readFile(`scripts/${script}.txt`, "utf8", (err, data) => {
         }
         // & // Run all code before an assigned semi-colon (;) value of current slot times
         else if (ch == "&") {
-            if (loop > 1 && WARN) {
-                console.log("\x1b[0m", "");
-                console.log("\x1b[33m", "If you include a semi-colon (;), it will end ALL loops and statements, so multiple of them might not work. (I am working on fixing it)");
-                console.log("\x1b[0m", "");
-            }
+            loops.push([char + 1, memory[pos]]);
 
-            loop = memory[pos];
-            loopChar = char + 1;
+            if (memory[pos] == 0) {
+                skip = true
+            }
         }
 
         ///////////////////////////////////////////////
