@@ -92,6 +92,19 @@ print the value of the 1st slot
 <br />
 <br />
 
+### Reset value of a slot
+Variables can be assigned and accessed just by setting a value in memory.
+```
+set value 
+]]]]
+
+remove 1 for value times
+&[;
+```
+*When the value of the slot is 0, you can use a colon (:) to get the value of the 0th slot.*
+<br />
+<br />
+
 <!-- Next snippet goes here -->
 
 ### [*Also try the "scripts" folder...*](https://github.com/kubgus/QuickLang/tree/master/scripts)
